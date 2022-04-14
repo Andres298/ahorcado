@@ -1,7 +1,7 @@
 import random
  
 letras = []
-list1 = ["handa"]
+list1 = ["handa","hola","bueno","chau","gato","perro"]
 mostrar = "palabra: "
 correctas = []
 incorrectas = []
@@ -46,15 +46,18 @@ def continar():
 		incorrectas.append(letra)
 	incorrecta = 0
 	for x in palabra:
+		correcta = 0
 		for y in correctas:
-			if x != y:
-				incorrecta = 1
-	if incorrecta == 0:
+			if x == y:
+				correcta = 1
+		if correcta == 0:
+			break
+
+	if correcta == 1:
 		print("Has ganado la palabra era " + palabra)
 		return
 	else:
 		print(mostrar)
-	print(len(palabra))
 	mostrar = "incorrectas: "
 	if len(incorrectas) > 0:
 		for x in incorrectas:
